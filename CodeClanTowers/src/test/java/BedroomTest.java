@@ -14,12 +14,12 @@ public class BedroomTest {
 
     @Test
     public void getBedroomName(){
-        assertEquals("Master Suite", bedroom.getBedroomName());
+        assertEquals("Master Suite", bedroom.getName());
     }
 
     @Test
     public void getBedroomLocation(){
-        assertEquals("London", bedroom.getBedroomLocation());
+        assertEquals("London", bedroom.getLocation());
     }
 
     @Test
@@ -35,5 +35,11 @@ public class BedroomTest {
     public void getBedroomPrice() {
         assertEquals(100.00, bedroom.getBedroomPrice(), 0.001);
     }
+
+    @Test
+    public void getCapacityFromBedroomEnum(){
+        assertEquals(2, bedroom.getCapacityFromBedroomEnum());
+    }
+
 
 }

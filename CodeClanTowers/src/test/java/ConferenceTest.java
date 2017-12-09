@@ -14,12 +14,12 @@ public class ConferenceTest {
 
     @Test
     public void getConferenceName(){
-        assertEquals("Court Room", conferenceRoom.getConferenceName());
+        assertEquals("Court Room", conferenceRoom.getName());
     }
 
     @Test
     public void getConferenceLocation(){
-        assertEquals("South Wing", conferenceRoom.getConferenceLocation());
+        assertEquals("South Wing", conferenceRoom.getLocation());
     }
 
     @Test

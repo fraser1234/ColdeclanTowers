@@ -17,12 +17,6 @@ public class RoomTest {
         assertEquals(0, room.getGuestCount());
     }
 
-//    @Test
-//    public void roomGetsOneGuest(){
-//        room.addGuest();
-//        assertEquals(1, room.getGuestCount());
-//    }
-
     @Test
     public void getName() {
         assertEquals("Double", room.getName());

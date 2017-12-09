@@ -12,14 +12,6 @@ public class Conference extends Room{
     }
 
 
-    public String getConferenceName() {
-        return name;
-    }
-
-    public String getConferenceLocation() {
-        return location;
-    }
-
     public ConferenceType getConferenceType() {
         return type;
     }

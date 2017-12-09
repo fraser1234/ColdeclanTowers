@@ -14,14 +14,6 @@ public class Bedroom extends Room {
     }
 
 
-    public String getBedroomName() {
-        return this.name;
-    }
-
-    public String getBedroomLocation() {
-        return this.location;
-    }
-
     public BedroomType getBedroomType() {
         return this.type;
     }
@@ -32,5 +24,9 @@ public class Bedroom extends Room {
 
     public double getBedroomPrice() {
         return this.price;
+    }
+
+    public int getCapacityFromBedroomEnum() {
+        return this.type.getCapacity();
     }
 }

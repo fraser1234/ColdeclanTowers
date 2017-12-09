@@ -27,7 +27,21 @@ public class Room {
         return guests.size();
     }
 
-    public int addGuest() {
+
+    public void addGuest(Guest guest) {
+        guests.add(guest);
+
+    }
+
+    public int countGuests() {
         return guests.size();
+    }
+
+    public void checkOutGuest(Guest guest) {
+        this.guests.remove(guest);
+    }
+
+    public Guest getFirstGuest(){
+        return guests.get(0);
     }
 }
