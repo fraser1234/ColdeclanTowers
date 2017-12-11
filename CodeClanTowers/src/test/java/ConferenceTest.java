@@ -38,4 +38,8 @@ public class ConferenceTest {
         assertEquals(200, conferenceRoom.getCapacityFromEnum());
     }
 
+    @Test
+    public void hasCapacity() {
+        assertEquals(100, conferenceRoom.getCapacity());
+    }
 }

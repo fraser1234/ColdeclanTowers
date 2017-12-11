@@ -6,7 +6,7 @@ public class Conference extends Room{
     private double price;
 
     public Conference(String name, String location, ConferenceType type, double price) {
-        super(name, location);
+        super(name, location, type.getCapacity());
         this.type = type;
         this.price = price;
     }

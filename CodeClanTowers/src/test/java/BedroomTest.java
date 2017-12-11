@@ -29,7 +29,7 @@ public class BedroomTest {
 
     @Test
     public void getBedroomNumber(){
-        assertEquals(11, bedroom.getBedroomNumber());
+        assertEquals(11, bedroom.getNumber());
     }
     @Test
     public void getBedroomPrice() {

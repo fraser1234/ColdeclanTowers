@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class HotelTest {
@@ -25,60 +27,33 @@ public class HotelTest {
         guest1 = new Guest("Shaun Praun");
         guest2 = new Guest("Mildew Cobblepot");
         guest3 = new Guest("Donkey Kong");
-        hotel = new Hotel();
+        hotel = new Hotel("Collesio");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("CodeClan Towers", hotel.getName());
     }
 
     @Test
     public void hotelNoGuests(){
-        assertEquals(0, hotel.countGuests());
+        assertEquals(0, hotel.bedroomCount());
     }
 
     @Test
-    public void addGuestToHotel(){
-        hotel.addGuest(guest1);
-        assertEquals(1, hotel.countGuests());
+    public void canAddBedroom(){
+        hotel.addBedroom(bedroom1);
+        assertEquals(1, hotel.bedroomCount());
     }
 
     @Test
-    public void canRemoveGuest(){
-        hotel.addGuest(guest1);
-        assertEquals(1, hotel.countGuests());
-        hotel.removeGuest(guest1);
-        assertEquals(0, hotel.countGuests());
-    }
-
-    @Test
-    public void addGuestToBedRoom(){
-        bedroom1.addGuest(guest1);
-        assertEquals(1, bedroom1.countGuests());
-    }
-
-    @Test
-    public void removeGuestFromBedRoom(){
-        bedroom1.addGuest(guest1);
-        assertEquals(1, bedroom1.countGuests());
-        bedroom1.checkOutGuest(guest1);
-        assertEquals(0, bedroom1.countGuests());
-    }
-
-    @Test
-    public void addGuestToConferenceRoom(){
-        conference1.addGuest(guest1);
-        assertEquals(1, conference1.countGuests());
-    }
-
-    @Test
-    public void removeGuestFromConferenceRoom(){
-        conference1.addGuest(guest1);
-        assertEquals(1, conference1.countGuests());
-        conference1.checkOutGuest(guest1);
-        assertEquals(0, conference1.countGuests());
-    }
-
-    @Test
-    public void checkThereIsEntry(){
-        bedroom1.addGuest(guest2);
-        bedroom1.getFirstGuest();
-        assertEquals(1, bedroom1.countGuests());
+    public void canGetGuestsCheckedIntoBedroom() {
+        hotel.addBedroom(bedroom1);
+        ArrayList<Guest> guestList = new ArrayList<Guest>();
+        guestList.add(guest1);
+        bedroom1.checkInGuests(guestList);
+        ArrayList<Guest> guests = hotel.getGuestsCheckedIntoBedroom(bedroom1.getNumber());
+        assertEquals(1, guests.size());
+        assertEquals("Shaun Praun", guests.get(0).getName());
     }
 }
